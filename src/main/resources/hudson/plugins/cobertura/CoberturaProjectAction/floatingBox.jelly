@@ -16,7 +16,7 @@
                                 <j:forEach var="metric" items="${lastResult.metrics}">
                                     <strong>${metric.name}</strong>
                                 &amp;nbsp;
-                                    ${lastResult.getCoverage(metric).percentage}%
+                                    ${lastResult.getCoverage(metric).percentageStringDisplay}%
                                 </j:forEach>
                             </td>
                         </tr>
@@ -33,19 +33,19 @@
                             <table style="padding: 0 10px; padding-top: 5px; width:480px;">
                                 <tr>
                                     <th align="left">${metric.name}</th>
-                                    <td align="right">${lastResult.getCoverage(metric).percentage}%</td>
+                                    <td align="right">${lastResult.getCoverage(metric).percentageStringDisplay}%</td>
                                 </tr>
                             </table>
                             <table style="height: 3px; padding: 0 10px; width:480px;">
                                 <tr>
                                     <j:if test="${lastResult.getCoverage(metric).percentage &gt; 0}">
-                                        <td width="${lastResult.getCoverage(metric).percentage}%"
+                                        <td width="${lastResult.getCoverage(metric).percentageStringDisplay}%"
                                         style="background-color:#bfb;">
                                         &amp;nbsp;
                                         </td>
                                     </j:if>
                                     <j:if test="${lastResult.getCoverage(metric).percentage &lt; 100}">
-                                        <td width="${100-lastResult.getCoverage(metric).percentage}%"
+                                        <td width="${100-lastResult.getCoverage(metric).percentageStringDisplay}%"
                                         style="background-color:#fdd;">
                                         &amp;nbsp;
                                         </td>

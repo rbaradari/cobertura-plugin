@@ -63,6 +63,7 @@ final public class Ratio implements Serializable {
     }
 
     static NumberFormat dataFormat = new DecimalFormat("000.00");
+    static NumberFormat dataDisplayFormat = new DecimalFormat("##0.00");
     static NumberFormat roundDownDataFormat;
 
     static {
@@ -85,6 +86,14 @@ final public class Ratio implements Serializable {
         } else {
             return dataFormat.format(floatPercentage);
         }
+    }
+
+    /**
+     * Gets the percentage as a formated string used for display in the html
+     * table
+     */
+    public String getPercentageStringDisplay() {
+        return dataDisplayFormat.format(getPercentageFloat());
     }
 
     /**

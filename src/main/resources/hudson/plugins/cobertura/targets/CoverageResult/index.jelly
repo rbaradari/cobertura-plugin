@@ -17,19 +17,19 @@
                         <table style="padding: 0 10px; padding-top: 5px; width:480px;">
                             <tr>
                                 <th align="left">${metric.name}</th>
-                                <td align="right">${it.getCoverage(metric).percentage}%</td>
+                                <td align="right">${it.getCoverage(metric).percentageStringDisplay}%</td>
                             </tr>
                         </table>
                         <table style="height: 3px; padding: 0 10px; width:480px;">
                             <tr>
                                 <j:if test="${it.getCoverage(metric).percentage &gt; 0}">
-                                    <td width="${it.getCoverage(metric).percentage}%"
+                                    <td width="${it.getCoverage(metric).percentageStringDisplay}%"
                                         style="background-color:#bfb;">
                                         &amp;nbsp;
                                     </td>
                                 </j:if>
                                 <j:if test="${it.getCoverage(metric).percentage &lt; 100}">
-                                    <td width="${100-it.getCoverage(metric).percentage}%"
+                                    <td width="${100-it.getCoverage(metric).percentageStringDisplay}%"
                                         style="background-color:#fdd;">
                                         &amp;nbsp;
                                     </td>
@@ -54,7 +54,7 @@
                         <td data="${it.getCoverage(metric).percentageString}">
                             <table class="percentgraph" cellpadding="0px" cellspacing="0px">
                                 <tr class="percentgraph">
-                                    <td width="40" class="data">${it.getCoverage(metric).percentage}%</td>
+                                    <td width="40" class="data">${it.getCoverage(metric).percentageStringDisplay}%</td>
                                     <td class="percentgraph"><div class="percentgraph"><div class="greenbar" style="width: ${it.getCoverage(metric).percentageFloat}px;"><span class="text">${it.getCoverage(metric)}</span></div></div></td>
                                 </tr>
                             </table>
@@ -86,7 +86,7 @@
                                     <j:when test="${childResult!=null and childResult.denominator != 0}">
                                         <td  data="${childResult.percentageString}">
                                             <table class="percentgraph" cellpadding="0px" cellspacing="0px"><tr class="percentgraph">
-                                                <td width="40" class="data">${childResult.percentage}%</td>
+                                                <td width="40" class="data">${childResult.percentageStringDisplay}%</td>
                                                 <td class="percentgraph"><div class="percentgraph"><div class="greenbar" style="width: ${childResult.percentageFloat}px;"><span class="text">${childResult}</span></div></div></td>
                                             </tr></table>
                                         </td>
