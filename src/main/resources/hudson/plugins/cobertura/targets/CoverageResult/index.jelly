@@ -11,10 +11,6 @@
             </j:forEach>
             <h2>${it.xmlTransform(it.name)}</h2>
             <j:set var="metrics" value="${it.metrics}"/>
-            <h3>${%Trend}</h3>
-            <j:if test="${it.previousResult != null}">
-                <img src="graph" width="500px" height="200px"/>
-            </j:if>
             <j:if test="${it.previousResult == null}">
                 <div style="border: 1px solid #eee; width:500px; ">
                     <j:forEach var="metric" items="${it.metrics}">
@@ -128,7 +124,6 @@
                                 <li>${%reason.1}</li>
                                 <li>${%reason.2}</li>
                                 <li>${%reason.3}</li>
-                                <li>${%reason.4}</li>
                             </ul>
                         </p>
                     </j:otherwise>
